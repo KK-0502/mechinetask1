@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mechinenoti/View/Notification_Screen/notification_Screen.dart';
 
 class SearchboxNotification extends StatelessWidget {
   const SearchboxNotification({super.key});
@@ -30,7 +31,11 @@ class SearchboxNotification extends StatelessWidget {
           ),
         ),
         SizedBox(width: 10),
-        Icon(Icons.notifications_none, color: Color(0xFFFF0000), size: 30),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context,MaterialPageRoute(builder: (_)=>NotificationScreen()));
+          },
+          child: Icon(Icons.notifications_none, color: Color(0xFFFF0000), size: 30)),
         SizedBox(width: 15),
         Icon(Icons.local_offer_outlined, color: Color(0xFFFFA115), size: 30),
       ],

@@ -3,6 +3,7 @@ import 'package:mechinenoti/View/Home_Screen/Components/Craze/craze_items.dart';
 import 'package:mechinenoti/View/Home_Screen/Components/Nearby/nearby_Items.dart';
 import 'package:mechinenoti/View/Home_Screen/Components/Refer/Refer_Body.dart';
 import 'package:mechinenoti/View/Home_Screen/Components/Trending/trending.dart';
+import 'package:mechinenoti/View/Home_Screen/Components/View_Button/view_Button.dart';
 import 'package:mechinenoti/View/Home_Screen/Components/location_Details.dart';
 import 'package:mechinenoti/View/Home_Screen/Components/searchbox_Notification.dart';
 import 'package:mechinenoti/View/Home_Screen/Components/today_Like.dart';
@@ -29,6 +30,7 @@ class HomeScreen extends StatelessWidget {
               CrazeItems(),
               ReferBody(),
               NearbyItems(),
+              Center(child: ViewButton()),
             ],
           ),
         ),
