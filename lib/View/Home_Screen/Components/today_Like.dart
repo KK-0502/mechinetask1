@@ -9,33 +9,49 @@ class TodayLike extends StatelessWidget {
       'icon': Icons.fastfood_rounded,
       'label': 'Food\nDelivery',
       'color': Color(0xFFEDC432),
+      'isImage': false,
     },
     {
       'icon': Icons.medication_liquid_sharp,
       'label': 'Medicines',
       'color': Color(0xFF94D363),
+      'isImage': false,
     },
-    {'icon': Icons.pets, 'label': 'Pet\nSupplies', 'color': Color(0xFFFFB044)},
+    {
+      'icon': Icons.pets,
+      'label': 'Pet\nSupplies',
+      'color': Color(0xFFFFB044),
+      'isImage': false,
+    },
     {
       'icon': Icons.card_giftcard_outlined,
       'label': 'Gifts',
       'color': Color(0xFFD37070),
+      'isImage': false,
     },
-    {'icon': Icons.egg, 'label': 'Meat', 'color': Color(0xFFE77944)},
     {
-      'icon': Icons.woman_outlined,
+      'icon': "assets/image/chick.png",
+      'label': 'Meat',
+      'color': Color(0xFFE77944),
+      'isImage': true,
+    },
+    {
+      'icon': "assets/image/cos.png",
       'label': 'Cosmetic',
       'color': Color(0xFFEDC432),
+      'isImage': true,
     },
     {
-      'icon': Icons.menu_book_outlined,
+      'icon': "assets/image/geo.png",
       'label': 'Stationary',
       'color': Color(0xFF87DDB7),
+      'isImage': true,
     },
     {
       'icon': Icons.store_rounded,
       'label': 'Stores',
       'color': Color(0xFFFFE6A2),
+      'isImage': false,
     },
   ];
 
@@ -71,7 +87,17 @@ class TodayLike extends StatelessWidget {
                     ),
                     elevation: 2,
                     child: Center(
-                      child: Icon(item['icon'], size: 30, color: item['color']),
+                      child: item['isImage']
+                          ? Image.asset(
+                              item['icon'],
+                              height: 30,
+                              width: 30,
+                            )
+                          : Icon(
+                              item['icon'],
+                              size: 30,
+                              color: item['color'],
+                            ),
                     ),
                   ),
                 ),
@@ -92,7 +118,7 @@ class TodayLike extends StatelessWidget {
         Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 "More",
                 style: TextStyle(
