@@ -5,7 +5,8 @@ import 'package:mechinenoti/ViewModel/Notify_Bloc/bloc/notify_bloc.dart';
 
 class NotificationList extends StatelessWidget {
   const NotificationList({super.key});
-  
+   
+   //This fuction for formating the date(12/10/2025 10:45 pm to 12/10/2025 or time is also)
    String formatTime(String dateTimeString) {
     try {
       final dateTime = DateTime.parse(dateTimeString);
@@ -28,29 +29,44 @@ class NotificationList extends StatelessWidget {
           return ListView.separated(
             itemBuilder: (context, index) {
               final notifyOne = nofifyState[index];
-              return ListTile(
-                leading: SizedBox(
-                  width: 50,
-                  height: 50,
-                  child: Image.network(
-                    notifyOne.image!,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) =>
-                        Icon(Icons.broken_image),
+              return Container(
+                width: double.infinity,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                    child: Image.network(
+                      notifyOne.image!,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          Icon(Icons.broken_image),
+                    ),
                   ),
-                ),
-
-                title: Text(
-                  notifyOne.title!,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
-                ),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(notifyOne.body!),
-                    SizedBox(height: 10),
-                    Text(formatTime(notifyOne.timestamp!)),
-                  ],
+                  SizedBox(width: 10,),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          notifyOne.title!,
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                        ),
+                        Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(notifyOne.body!,maxLines: 1,overflow:TextOverflow.ellipsis),
+                      SizedBox(height: 10),
+                      Text(formatTime(notifyOne.timestamp!)),
+                    ],
+                                    )
+                      ],
+                    ),
+                  ),
+                  
+                    ],
+                  ),
                 ),
               );
             },
