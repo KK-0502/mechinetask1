@@ -14,6 +14,7 @@ class ReferBody extends StatelessWidget {
         color: Color(0xFF29D177)
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ReferText(),
           Image.asset("assets/image/gift.png")

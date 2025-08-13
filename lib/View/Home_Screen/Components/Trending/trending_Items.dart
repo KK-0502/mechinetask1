@@ -10,21 +10,23 @@ class TrendingItems extends StatelessWidget {
       height: 300, 
       child: GridView.builder(
         scrollDirection: Axis.horizontal, 
-        itemCount: 5,
+        itemCount: 4,
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
+          maxCrossAxisExtent: 150,
           mainAxisSpacing: 12,
-          crossAxisSpacing: 12,
+          crossAxisSpacing: 0,
           childAspectRatio: 0.54,
         ),
         itemBuilder: (context, index) {
           return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 121,
+              Container(
+                height: 100,
                 width: 80,
-                child: Image.asset("assets/image/ice.png"),
+                child: ClipRRect(child: Image.asset("assets/image/ice.png",fit: BoxFit.cover,),
+                borderRadius: BorderRadius.circular(10),
+                ),
               ),
              Padding(
                padding: const EdgeInsets.all(8.0),

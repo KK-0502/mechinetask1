@@ -8,6 +8,7 @@ class ReferText extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Refer & Earn",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.w700),),

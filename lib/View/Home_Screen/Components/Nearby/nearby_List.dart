@@ -18,7 +18,9 @@ class NearbyList extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset("assets/image/food.png"),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset("assets/image/food.png")),
                 SizedBox(width: 16),
                 NearbyDetails(),
               ],

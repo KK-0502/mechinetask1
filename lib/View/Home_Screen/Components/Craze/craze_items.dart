@@ -11,6 +11,7 @@ class CrazeItems extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Heading(headings: "Craze deals"),
+        SizedBox(height: 10,),
         CrazeContainer(),
       ],
     );
